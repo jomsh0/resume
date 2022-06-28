@@ -3,6 +3,7 @@
 h1 { margin: 0; font-family: var(--heading); }
 header {
   font-size: large;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   text-align: center;
