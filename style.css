@@ -12,12 +12,10 @@ header > * { display: inline-block; }
 header > div {
   width: max-content;
   text-align: left;
-  margin: .8em -.5em 0 .5em;
+  margin-top: .5em;
 }
-header > *, header > div > div * {
-  vertical-align: middle;
-}
-
+header > * { vertical-align: middle; }
+header > div > div * { vertical-align: bottom; }
 h2 {
   --grad: linear-gradient(to top right, cyan 15%, dodgerblue 40%);
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
