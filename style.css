@@ -1,7 +1,6 @@
 @import url(/base.css);
 
 h1 { margin: 0; font-family: var(--heading); }
-header a { text-decoration: none; }
 header {
   font-size: large;
   width: fit-content;
@@ -16,6 +15,9 @@ header > div {
 }
 header > * { vertical-align: middle; }
 nav * { vertical-align: bottom; }
+header a { text-decoration: none; }
+header a.email:hover { text-decoration: underline; }
+header svg.feather:hover { stroke: url(#grad); }
 h2 {
   --grad: linear-gradient(to top right, cyan 15%, dodgerblue 40%);
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
