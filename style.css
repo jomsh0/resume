@@ -15,7 +15,7 @@ header > div {
   margin-top: .5em;
 }
 header > * { vertical-align: middle; }
-header > div > div * { vertical-align: bottom; }
+nav * { vertical-align: bottom; }
 h2 {
   --grad: linear-gradient(to top right, cyan 15%, dodgerblue 40%);
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
