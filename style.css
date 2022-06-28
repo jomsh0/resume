@@ -7,13 +7,16 @@ h2 { border-bottom: solid 1px; }
 
 #exp {
   display: grid;
-  grid: auto-flow dense / max-content max-content;
+  grid: auto-flow dense / 1fr max-content;
 }
 #exp ul, #exp h2 { grid-column: span 2; }
-#exp h3, #exp .title { grid-column: 1; }
-#exp .loc, #exp .date {
-  grid-column: 2;
-  justify-self: right;
+#exp > * { grid-column: 1; }
+/*#exp h3, #exp .title { grid-column: 1; }*/
+@media only screen and (min-width: 500px) {
+  #exp .loc, #exp .date {
+    grid-column: 2;
+    justify-self: right;
+  }
 }
 #exp h3, #exp p { margin-block: .1em; }
 
