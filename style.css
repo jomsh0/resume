@@ -20,7 +20,6 @@ header a { text-decoration: none; }
 header a.email:hover { text-decoration: underline; }
 header svg.feather:hover { stroke: url(#grad); }
 h2 {
-  --grad: linear-gradient(to top right, cyan 15%, dodgerblue 40%);
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
   font-variant: all-small-caps;
   font-weight: normal;
@@ -38,12 +37,17 @@ h2::after {
 }
 h3 { font-size: medium; }
 
-.date  { font-weight: bold; font-variant: oldstyle-nums; }
+.date  {
+  font-family: var(--heading);
+  font-weight: bold;
+  font-variant: oldstyle-nums;
+}
 .loc   { font-variant: all-small-caps; }
 .title { font-style: italic; }
 
 .two-col {
   display: grid;
+  align-items: center;
   grid: auto-flow dense / max-content 1fr max-content;
   column-gap: 1em;
 }
