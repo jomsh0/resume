@@ -15,10 +15,13 @@ header > div {
   margin-top: .5em;
 }
 header > * { vertical-align: middle; }
+header address { margin-block: -.2em .2em; }
+header address svg.feather { font-size: small; }
 nav * { vertical-align: bottom; }
-header a { text-decoration: none; }
-header a.email:hover { text-decoration: underline; }
-header svg.feather:hover { stroke: url(#grad); }
+nav a, nav a.email:hover { text-decoration: none; }
+nav a.email { text-decoration: underline; }
+nav svg.feather { font-size: 15pt; }
+nav svg.feather:hover { stroke: url(#grad); }
 h2 {
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
   font-variant: all-small-caps;
@@ -59,7 +62,6 @@ h3 { font-size: medium; }
 .two-col .loc, .two-col .date { grid-row: span 2; justify-self: right; }
 .two-col .loc  { grid-column: 2; }
 .two-col .date { grid-column: 3; }
-
 @media (max-width: 490px) {
   .two-col .loc { grid-column: 1; justify-self: left; }
   .two-col .date { grid-row: span 3; }
