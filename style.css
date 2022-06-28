@@ -1,32 +1,43 @@
 @import url(/base.css);
 
-body { --heading: Cooper; position: relative; }
-header img { border-radius: 50%; }
 header a { text-decoration: none; }
 
-h2 { border-bottom: solid 1px; }
-
-#exp h3, #exp p { margin-block: .1em; }
-@media (min-width: 550px) {
-  #exp { columns: 2; column-gap: 0; }
-  #exp > .loc, #exp > .date { text-align: right; }
-  #exp > h2, #exp > ul { column-span: all; }
+h2 {
+  --grad: linear-gradient(to top right, cyan 15%, dodgerblue 40%);
+  font-variant: all-small-caps;
+  font-weight: normal;
+  margin-top: 2em;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+h2::after {
+  content: ' ';
+  display: block;
+  height: 1px;
+  background: var(--grad);
+}
+h3 { font-size: large; }
 
-/* Grid: more robust, but more complicated.
- *  - elements are guaranteed to be in the correct column
- *  - columns can be different sizes
- *
-#exp {
+.date { font-weight: bold; }
+.date, .loc { font-variant: all-small-caps oldstyle-nums; }
+.title { font-size: large; font-style: italic; }
+
+.two-col {
   display: grid;
-  grid: auto-flow dense / 1fr max-content;
+  grid: auto-flow dense / max-content 1fr max-content;
+  column-gap: 1em;
 }
-#exp > * { grid-column: 1; }
-#exp ul, #exp h2 { grid-column-end: -1; }
-@media only screen and (min-width: 500px) {
-  #exp .loc, #exp .date {
-    grid-column: 2;
-    justify-self: right;
-  }
+.two-col p, .two-col h3 { margin: 0; }
+.two-col > ul { margin-block: 1em 3em; }
+.two-col > ul:last-child { margin-bottom: 0; }
+.two-col > ul, .two-col > h2 { grid-column: span 3; }
+.two-col > .title, .two-col > h3 { grid-column: 1; }
+.two-col .loc, .two-col .date { grid-row: span 2; justify-self: right; }
+.two-col .loc  { grid-column: 2; }
+.two-col .date { grid-column: 3; }
+@media (max-width: 500px) {
+  .two-col .loc { grid-column: 1; justify-self: left; }
+  .two-col .date { grid-row: span 3; }
 }
- */
