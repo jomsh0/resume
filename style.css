@@ -18,11 +18,11 @@ h2::after {
   height: 1px;
   background: var(--grad);
 }
-h3 { font-size: large; }
+h3 { font-size: medium; }
 
-.date { font-weight: bold; }
-.date, .loc { font-variant: all-small-caps oldstyle-nums; }
-.title { font-size: large; font-style: italic; }
+.date  { font-weight: bold; font-variant: oldstyle-nums; }
+.loc   { font-variant: all-small-caps; }
+.title { font-style: italic; }
 
 .two-col {
   display: grid;
@@ -37,7 +37,7 @@ h3 { font-size: large; }
 .two-col .loc, .two-col .date { grid-row: span 2; justify-self: right; }
 .two-col .loc  { grid-column: 2; }
 .two-col .date { grid-column: 3; }
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .two-col .loc { grid-column: 1; justify-self: left; }
   .two-col .date { grid-row: span 3; }
 }
