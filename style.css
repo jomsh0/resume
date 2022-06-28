@@ -4,6 +4,7 @@ header a { text-decoration: none; }
 
 h2 {
   --grad: linear-gradient(to top right, cyan 15%, dodgerblue 40%);
+  --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
   font-variant: all-small-caps;
   font-weight: normal;
   margin-top: 2em;
@@ -15,7 +16,7 @@ h2 {
 h2::after {
   content: ' ';
   display: block;
-  height: 1px;
+  height: 1.5px;
   background: var(--grad);
 }
 h3 { font-size: medium; }
