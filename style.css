@@ -15,7 +15,11 @@ header > div {
   margin-top: .5em;
 }
 header > * { vertical-align: middle; }
-header address { margin-block: -.2em .8em; }
+header address {
+  border-block: solid .5px #888;
+  padding-block: 1px;
+  margin-bottom: .5em;
+}
 header address svg.feather { font-size: small; }
 nav * { vertical-align: bottom; }
 nav a, nav a.email:hover { text-decoration: none; }
