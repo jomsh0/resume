@@ -18,12 +18,12 @@ header > * { vertical-align: middle; }
 header address {
   border-block: solid .5px #888;
   padding-block: 1px;
-  margin-bottom: .5em;
+  margin-bottom: .4em;
 }
 header address svg.feather { font-size: small; }
 nav * { vertical-align: bottom; }
-nav a, nav a.email:hover { text-decoration: none; }
-nav a.email { text-decoration: underline; }
+nav a { text-decoration: none; }
+nav a.email:hover { text-decoration: underline; }
 nav svg.feather { font-size: 15pt; }
 nav svg.feather:hover { stroke: url(#grad); }
 h2 {
