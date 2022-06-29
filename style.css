@@ -8,13 +8,12 @@ header {
   margin: auto;
   text-align: center;
 }
-header > * { display: inline-block; }
+header > * { display: inline-block; vertical-align: middle; }
 header > div {
   width: max-content;
   text-align: left;
   margin-top: .5em;
 }
-header > * { vertical-align: middle; }
 header address {
   border-block: solid .5px #888;
   padding-block: 1px;
@@ -66,7 +65,14 @@ h3 { font-size: medium; }
 .two-col .loc, .two-col .date { grid-row: span 2; justify-self: right; }
 .two-col .loc  { grid-column: 2; }
 .two-col .date { grid-column: 3; }
+
+main ul {
+  list-style: circle;
+  padding-inline-start: 2rem;
+}
+
 @media (max-width: 490px) {
   .two-col .loc { grid-column: 1; justify-self: left; }
   .two-col .date { grid-row: span 3; }
+  main ul { padding-inline-start: 1.2rem; }
 }
