@@ -20,11 +20,11 @@ header address {
   padding-block: 1px;
   margin-bottom: .4em;
 }
-header address svg.feather { font-size: small; }
+header address svg.feather { vertical-align: -1px; font-size: small; }
 nav * { vertical-align: bottom; }
 nav a { text-decoration: none; }
 nav a.email:hover { text-decoration: underline; }
-nav svg.feather { font-size: 15pt; }
+nav svg.feather { font-size: 16pt; margin-right: 2px; }
 nav svg.feather:hover { stroke: url(#grad); }
 h2 {
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
