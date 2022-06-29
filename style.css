@@ -25,11 +25,12 @@ nav a { text-decoration: none; }
 nav a.email:hover { text-decoration: underline; }
 nav svg.feather { font-size: 16pt; margin-right: 2px; }
 nav svg.feather:hover { stroke: url(#grad); }
+
+section { margin-block: 2rem; }
 h2 {
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
   font-variant: all-small-caps;
   font-weight: normal;
-  margin-top: 2em;
   background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
@@ -58,8 +59,6 @@ h3 { font-size: medium; }
   column-gap: 1em;
 }
 .two-col p, .two-col h3 { margin: 0; }
-.two-col > ul { margin-block: 1em 3em; }
-.two-col > ul:last-child { margin-bottom: 0; }
 .two-col > ul, .two-col > h2 { grid-column: span 3; }
 .two-col > .title, .two-col > h3 { grid-column: 1; }
 .two-col .loc, .two-col .date { grid-row: span 2; justify-self: right; }
@@ -69,7 +68,9 @@ h3 { font-size: medium; }
 main ul {
   list-style: circle;
   padding-inline-start: 2rem;
+  margin-block-end: 2rem;
 }
+main ul:last-child { margin-block-end: 0; }
 
 @media (max-width: 490px) {
   .two-col .loc { grid-column: 1; justify-self: left; }
