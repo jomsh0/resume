@@ -14,5 +14,30 @@ and it turned out to be more robust than other methods I tried. Something I
 really like about it is the markup doesn’t need any superfluous containers or
 unnatural ordering.
 
-![image](https://user-images.githubusercontent.com/107401967/177177678-43d6cdb6-3d71-4130-ba87-cd777e4526f3.png)
-![image](https://user-images.githubusercontent.com/107401967/177177996-74c7b716-5eaa-4efb-985c-a07f9956530b.png)
+## Responsive sample
+
+### Markup
+
+    <section class=two-col>
+      <h2>Experience</h2>
+    
+      <h3>Allen Press</h3>
+      <p class=title>XML Specialist
+      <p class=loc>Lawrence, KS
+      <p class=date>19–22
+      <ul>
+        <li>Performed 70%–80% of the XML component of all daily production
+        <li>...
+      </ul>
+
+### Desktop render
+
+<img src="https://user-images.githubusercontent.com/107401967/177180655-7ff67de7-9902-4742-a54b-e3087b50bc5a.png"
+     alt="Screenshot of 2-column layout segment on desktop"
+     width=600>
+
+### iPhone SE render
+
+<img src="https://user-images.githubusercontent.com/107401967/177180813-b29873ab-d7bf-4349-a334-c59a376443a1.png"
+     alt="Screenshot of 2-column layout segment on iPhone SE"
+     width=300>
