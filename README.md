@@ -13,3 +13,6 @@ to viewport size using CSS media queries. It made for good CSS grid practice,
 and it turned out to be more robust than other methods I tried. Something I
 really like about it is the markup doesn’t need any superfluous containers or
 unnatural ordering.
+
+![image](https://user-images.githubusercontent.com/107401967/177177678-43d6cdb6-3d71-4130-ba87-cd777e4526f3.png)
+![image](https://user-images.githubusercontent.com/107401967/177177996-74c7b716-5eaa-4efb-985c-a07f9956530b.png)
