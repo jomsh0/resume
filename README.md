@@ -32,12 +32,12 @@ unnatural ordering.
 
 ### Desktop render
 
-<img src="https://user-images.githubusercontent.com/107401967/177180655-7ff67de7-9902-4742-a54b-e3087b50bc5a.png"
+<img src="https://user-images.githubusercontent.com/107401967/177557169-b244f8e6-50e5-4c37-9390-c19c8e70e2d7.png"
      alt="Screenshot of 2-column layout segment on desktop"
      width=600>
 
 ### iPhone SE render
 
-<img src="https://user-images.githubusercontent.com/107401967/177180813-b29873ab-d7bf-4349-a334-c59a376443a1.png"
+<img src="https://user-images.githubusercontent.com/107401967/177556942-d468b0e4-aa03-4594-97f0-f88f684c12ca.png"
      alt="Screenshot of 2-column layout segment on iPhone SE"
      width=300>
