@@ -28,6 +28,7 @@ nav svg.feather:hover { stroke: url(#grad); }
 
 section { margin-block: 2rem; }
 h2 {
+  margin: 0;
   --grad: linear-gradient(50deg, dodgerblue, 50%, cyan 140%);
   font-variant: all-small-caps;
   font-weight: normal;
@@ -52,28 +53,48 @@ h3 { font-size: medium; }
 .loc   { font-variant: all-small-caps; }
 .title { font-style: italic; }
 
-.two-col {
+.grid {
   display: grid;
   align-items: center;
   grid: auto-flow dense / max-content 1fr max-content;
   column-gap: 1em;
 }
-.two-col p, .two-col h3 { margin: 0; }
-.two-col > ul, .two-col > h2 { grid-column: span 3; }
-.two-col > .title, .two-col > h3 { grid-column: 1; }
-.two-col .loc, .two-col .date { grid-row: span 2; justify-self: right; }
-.two-col .loc  { grid-column: 2; }
-.two-col .date { grid-column: 3; }
+
+/* Default items span full width and are indented */
+/* No margin collapsing in grid, so fix that too */
+.grid > * {
+  grid-column: 1/-1;
+  margin-block-end: 0;
+  margin-inline-start: 1rem;
+}
+
+/* Fix up margin exceptions */
+.grid > h2, .grid > h3 { margin-inline-start: revert; }
+.grid > h3:not(:first-of-type) { margin-block-start: 2rem; }
+.grid > :last-child { margin-block-end: revert; }
+.grid > p[class] { margin: 0; }
+
+/* Fix up column exceptions */
+.grid > p.title, .grid > h3 { grid-column: 1; }
+.grid p.loc  { grid-column: 2; }
+.grid p.date { grid-column: 3; }
+
+
+/* Right side of grid */
+.grid p.loc, .grid p.date {
+  grid-row: span 2;
+  justify-self: right;
+  align-self: end;
+  margin-block-end: .5rem;
+}
 
 main ul {
   list-style: circle;
-  padding-inline-start: 2rem;
-  margin-block-end: 2rem;
+  padding-inline-start: 1rem;
 }
-main ul:last-child { margin-block-end: 0; }
 
 @media (max-width: 490px) {
-  .two-col .loc { grid-column: 1; justify-self: left; }
-  .two-col .date { grid-row: span 3; }
-  main ul { padding-inline-start: 1.2rem; }
+  .grid p.loc { grid-column: 1; justify-self: left; }
+  .grid p.date { grid-row: span 3; }
+  .grid > * { margin-inline-start: .5rem; }
 }
