@@ -6,7 +6,7 @@ Based loosely on a LaTeX template I used for my previous résumé. Simple and
 traditional. To make it less boring as a webpage, I added some color and Cooper
 Black accents.
 
-The layout appears fixed on a larger screen, sort of like a resume would look on
+The layout appears fixed on a larger screen, sort of how a resume would look on
 paper. But it’s responsive to phone-sized screens. The main trick is a grid
 layout with a static container template, but with item `grid-area`s that respond
 to viewport size using CSS media queries. It made for good CSS grid practice,
@@ -18,17 +18,17 @@ unnatural ordering.
 
 ### Markup
 
-    <section class=two-col>
+    <section class=grid>
       <h2>Experience</h2>
-    
+
       <h3>Allen Press</h3>
+
       <p class=title>XML Specialist
       <p class=loc>Lawrence, KS
       <p class=date>19–22
       <ul>
-        <li>Performed 70%–80% of the XML component of all daily production
+        <li>Performed 70%–80% of the XML component of all daily production.
         <li>...
-      </ul>
 
 ### Desktop render
 
