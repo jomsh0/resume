@@ -38,6 +38,6 @@ unnatural ordering.
 
 ### iPhone SE render
 
-<img src="https://user-images.githubusercontent.com/107401967/177556942-d468b0e4-aa03-4594-97f0-f88f684c12ca.png"
+<img src="https://user-images.githubusercontent.com/107401967/177566446-f2606b1d-1595-4862-9098-45d3677c2dc2.png"
      alt="Screenshot of 2-column layout segment on iPhone SE"
      width=300>
