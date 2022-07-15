@@ -34,7 +34,7 @@
 
       if (!photoData) { return }
       img.src = 'data:image/jpeg;base64,' + photoData.text.trim()
-      img.hidden = false
+      img.classList.remove('hidden')
     })
   </script>
 <% fi %>
@@ -48,10 +48,11 @@
 
 <header>
   <a href='https://jomsh.cc' title='Back to jomsh.cc'>
+    <!-- Apparently this isn't the right use for the HTML `hidden` attribute. -->
     <img id=me src='https://jomsh.cc/img/john-400.jpg' width=160 height=160 alt=''<%
-      [ "${RESUME_STANDALONE-}" ] && printf \ hidden %>>
+      [ "${RESUME_STANDALONE-}" ] && printf \ class=hidden
+    %>>
   </a>
-
   <div>
     <h1>John Sherrell</h1>
     <address>
@@ -59,8 +60,8 @@
       Lawrence, Kansas
     </address>
     <!-- • -->
+    <a class=email href='mailto:john@jomsh.cc'>john@jomsh.cc</a>&nbsp;
     <nav>
-      <a class=email href='mailto:john@jomsh.cc'>john@jomsh.cc</a>&nbsp;
       <a href='https://github.com/jomshcc' title='GitHub profile'>
         <svg class=feather><use href=#ft-github /></svg>
       </a>

@@ -26,6 +26,8 @@ footer {
   margin-top: 1.5rem;
 }
 
+.hidden { display: none; }
+
 header {
   font-size: large;
   width: -moz-fit-content;
@@ -50,9 +52,10 @@ header address {
   margin-bottom: .4em;
 }
 header address svg.feather { vertical-align: -1px; font-size: small; }
+header > div a { text-decoration: none; }
+header > div a:hover { text-decoration: underline; }
+header > div > a.email, header > div > nav { display: inline-block; }
 nav * { vertical-align: bottom; }
-nav a { text-decoration: none; }
-nav a.email:hover { text-decoration: underline; }
 nav svg.feather { font-size: 16pt; margin-right: 2px; }
 nav svg.feather:hover { stroke: url(#grad); }
 
