@@ -28,13 +28,14 @@
 <% base64 ../_/img/john-400.jpg %>
   </script>
   <script>
-    function imgFB(img) {
+    window.addEventListener('DOMContentLoaded', () => {
       const photoData = document.querySelector('#photo-data')
-      if (!photoData) { img.remove() }
-      else {
-        img.src = 'data:image/jpeg;base64,' + photoData.text.trim()
-      }
-    }
+          , img = document.querySelector('img#me')
+
+      if (!photoData) { return }
+      img.src = 'data:image/jpeg;base64,' + photoData.text.trim()
+      img.hidden = false
+    })
   </script>
 <% fi %>
 </head>
@@ -47,9 +48,10 @@
 
 <header>
   <a href='https://jomsh.cc' title='Back to jomsh.cc'>
-    <img id=me src='https://jomsh.cc/img/john-400.jpg' width=160 height=160 alt=''
-         onerror='typeof imgFB === "function" && imgFB(this)'>
+    <img id=me src='https://jomsh.cc/img/john-400.jpg' width=160 height=160 alt=''<%
+      [ "${RESUME_STANDALONE-}" ] && printf \ hidden %>>
   </a>
+
   <div>
     <h1>John Sherrell</h1>
     <address>

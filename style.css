@@ -34,7 +34,10 @@ header {
   text-align: center;
 }
 header > * { display: inline-block; vertical-align: middle; }
-header > a:first-child { margin-inline-end: .75ch; }
+header > a:first-child {
+  margin-inline-end: .75ch;
+  min-height: 150px; /* Keep approx layout spacing when there's no photo */
+}
 header h1 { margin: 0; }
 header > div {
   width: max-content;
