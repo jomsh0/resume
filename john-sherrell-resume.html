@@ -153,7 +153,6 @@ h3 { font-size: medium; }
 /* Fix up margin exceptions */
 .grid > h2, .grid > h3 { margin-inline-start: revert; }
 .grid > h3:not(:first-of-type) { margin-block-start: 2rem; }
-.grid > :last-child { margin-block-end: revert; }
 .grid > p[class] { margin: 0; }
 
 /* Fix up column exceptions */
@@ -179,6 +178,27 @@ main ul {
   .grid p.loc { grid-column: 1; justify-self: left; }
   .grid p.date { grid-row: span 3; }
   .grid > * { margin-inline-start: .5rem; }
+}
+
+@page :first { margin-top: 10px; }
+
+@media print {
+  :root {
+    color: #111;
+    padding: 0;
+    font-size: 85%;
+  }
+  .meh, h2::after, footer, body > a:first-child,
+    header > a:first-child { display: none }
+
+  header { font-size: medium; }
+  h1, h2, h3, p.date { color: #333; }
+  h2 { border-bottom: solid 1px; }
+  section { margin-block: 1rem; }
+
+  .grid > h3:not(:first-of-type) { margin-block-start: 1rem; }
+  .grid > ul, .grid > p:not([class]) { margin-block-start: .5rem; }
+  .grid > p:not([class]) { margin-inline-start: .6rem; }
 }
 
   </style>
