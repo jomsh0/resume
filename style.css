@@ -8,16 +8,17 @@ body {
 body > a:first-child {
   display: block;
   position: absolute;
-  /* :root padding on top */
-  top: -1rem; right: 0;
+  /* :root padding */
+  top: -.5rem; right: -.5rem;
   opacity: .7;
   text-decoration: none;
-  padding: .3em .8em .5em;
-  outline: solid .5px;
-  border-radius: 0 0 .3em .3em;
+  padding: .2em .6em .4em;
+  border: solid .5px;
+  border-radius: .3em;
+  font-size: small;
   font-variant: all-small-caps;
 }
-body > a:first-child:hover { opacity: 1; outline-width: 1px; }
+body > a:first-child:hover { opacity: 1; outline: solid 1px; }
 
 footer {
   text-align: center;
@@ -34,7 +35,7 @@ header {
 }
 header > * { display: inline-block; vertical-align: middle; }
 header > a:first-child { margin-inline-end: .75ch; }
-header h1 { margin: 0 }
+header h1 { margin: 0; }
 header > div {
   width: max-content;
   text-align: left;
@@ -73,7 +74,7 @@ h3 { font-size: medium; }
 
 .date  {
   font-family: var(--heading);
-  font-weight: bold;
+  font-weight: 900;
   font-variant: oldstyle-nums;
 }
 .loc   { font-variant: all-small-caps; }
