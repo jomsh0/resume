@@ -106,7 +106,7 @@ header address {
 header address svg.feather { vertical-align: -1px; font-size: small; }
 header > div a { text-decoration: none; }
 header > div a:hover { text-decoration: underline; }
-header > div > a.email, header > div > nav { display: inline-block; }
+header > div a.email, header > div nav { display: inline-block; }
 nav * { vertical-align: bottom; }
 nav svg.feather { font-size: 16pt; margin-right: 2px; }
 nav svg.feather:hover { stroke: url(#grad); }
@@ -183,11 +183,11 @@ main ul {
   .grid > * { margin-inline-start: .5rem; }
 }
 
-@page :first { margin-top: 10px; }
+@page :first { margin-top: 1.8rem; }
 
 @media print {
   :root {
-    color: #111;
+    color: #222;
     padding: 0;
     font-size: 85%;
   }
@@ -195,9 +195,30 @@ main ul {
     header > a:first-child { display: none }
 
   header { font-size: medium; }
-  h1, h2, h3, p.date { color: #333; }
+  h1, h2, h3, p.date { color: #444; }
   h2 { border-bottom: solid 1px; }
   section { margin-block: 1rem; }
+
+  header, header > div { all: revert; }
+  header > div > div > nav {
+    position: absolute;
+    top: 5px; right: 0;
+  }
+  nav svg.feather { font-size: large; margin-right: 2px; stroke-width: 1px; color: #444; }
+  header > div address { all: revert; }
+  header > div address > svg { display: none; }
+  header > div > div {
+    color: #888;
+    border-block: solid .5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .2em .2em;
+  }
+  header > div > div > a.email {
+    order: -1;
+  }
+  header > div > div > .hidden { display: block; }
 
   .grid > h3:not(:first-of-type) { margin-block-start: 1rem; }
   .grid > ul, .grid > p:not([class]) { margin-block-start: .5rem; }
@@ -565,26 +586,29 @@ sHkN0DmnWaJDiBQrbdKbDac3mOQG/wA0rXAbk03q3mUMbX6iHEgg3/4QFZjFsb3R+I2F1tJpru6d
   </a>
   <div>
     <h1>John Sherrell</h1>
-    <address>
-      <svg class=feather><use href=#ft-map-pin /></svg>
-      Lawrence, Kansas
-    </address>
-    <!-- • -->
-    <a class=email href='mailto:john@jomsh.cc'>john@jomsh.cc</a>&nbsp;
-    <nav>
-      <a href='https://github.com/jomshcc' title='GitHub profile'>
-        <svg class=feather><use href=#ft-github /></svg>
-      </a>
-      <a href='https://www.linkedin.com/in/jonathan-sherrell-aa0b42241' title='LinkedIn profile'>
-      <svg class=feather><use href=#ft-linkedin /></svg>
-      </a>
-      <a href='https://instagram.com/jomsh.cc' title='Instagram profile'>
-        <svg class=feather><use href=#ft-instagram /></svg>
-      </a>
-      <a href='https://twitter.com/jomshcc' title='Twitter profile'>
-        <svg class=feather><use href=#ft-twitter /></svg>
-      </a>
-    </nav>
+    <div>
+      <address>
+        <svg class=feather><use href=#ft-map-pin /></svg>
+        Lawrence, Kansas
+      </address>
+      <!-- • -->
+      <a class=email href='mailto:john@jomsh.cc'>john@jomsh.cc</a>
+      <a href='https://jomsh.cc' class=hidden>https://jomsh.cc</a>
+      <nav>
+        <a href='https://github.com/jomshcc' title='GitHub profile'>
+          <svg class=feather><use href=#ft-github /></svg>
+        </a>
+        <a href='https://www.linkedin.com/in/jonathan-sherrell-aa0b42241' title='LinkedIn profile'>
+        <svg class=feather><use href=#ft-linkedin /></svg>
+        </a>
+        <a href='https://instagram.com/jomsh.cc' title='Instagram profile'>
+          <svg class=feather><use href=#ft-instagram /></svg>
+        </a>
+        <a href='https://twitter.com/jomshcc' title='Twitter profile'>
+          <svg class=feather><use href=#ft-twitter /></svg>
+        </a>
+      </nav>
+    </div>
   </div>
 </header>
 
