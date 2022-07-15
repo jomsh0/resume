@@ -1,6 +1,15 @@
 @import url(/base.css);
 
-h1 { margin: 0; font-family: var(--heading); }
+body {
+  max-width: 650px;
+  margin: auto;
+}
+footer {
+  text-align: center;
+  font-size: small;
+  margin-top: 1.5rem;
+}
+
 header {
   font-size: large;
   width: -moz-fit-content;
@@ -9,6 +18,8 @@ header {
   text-align: center;
 }
 header > * { display: inline-block; vertical-align: middle; }
+header > a:first-child { margin-inline-end: .75ch; }
+header h1 { margin: 0 }
 header > div {
   width: max-content;
   text-align: left;

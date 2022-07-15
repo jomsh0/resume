@@ -1,25 +1,195 @@
 <!DOCTYPE html>
 <html lang=en>
-<!---------
-  This is a standalone single-file version, particularly relevant for a
-  resume.
-<---------->
+<!-------
+  Built to work as a standalone single HTML file,
+  particularly relevant for a resume.
+<------->
 <head>
   <meta charset=utf-8>
   <meta name=viewport content='width=device-width'>
 
   <title>Résumé—John Sherrell</title>
-  <!-- data: url?
+  
+<% if [ -z "${RESUME_STANDALONE-}" ]; then %>
   <link rel=icon href=/favicon.svg sizes=any type=image/svg+xml>
-  -->
   <!-- idk, apple!
   <link rel=mask-icon href=/favicon.svg color=#ccc>
   -->
+  <link rel=stylesheet href=style.css>
+  <script data-goatcounter='https://jomsh.goatcounter.com/count' async src='https://gc.zgo.at/count.js'></script>
+  <script src='/s3-log.js' async></script>
+
+<% else %>
+
   <style>
-    <% cat style.css %>
+<% sed /@import/d ../_/base.css style.css %>
   </style>
+  <script id=photo-data type='image/jpeg'>
+<% base64 ../_/img/john-400.jpg %>
+  </script>
+  <script>
+    function imgFB(img) {
+      const photoData = document.querySelector('#photo-data')
+      if (!photoData) { img.remove() }
+      else {
+        img.src = 'data:image/jpeg;base64,' + photoData.text.trim()
+      }
+    }
+  </script>
+<% fi %>
 </head>
 
-<% cat body.html %>
+<header>
+  <a href='https://jomsh.cc' title='Back to jomsh.cc'>
+    <img id=me src='https://jomsh.cc/img/john-400.jpg' width=160 height=160 alt=''
+         onerror='typeof imgFB === "function" && imgFB(this)'>
+  </a>
+  <div>
+    <h1>John Sherrell</h1>
+    <address>
+      <svg class=feather><use href=#ft-map-pin /></svg>
+      Lawrence, Kansas
+    </address>
+    <!-- • -->
+    <nav>
+      <a class=email href='mailto:john@jomsh.cc'>john@jomsh.cc</a>&nbsp;
+      <a href='https://github.com/jomshcc' title='GitHub profile'>
+        <svg class=feather><use href=#ft-github /></svg>
+      </a>
+      <a href='https://www.linkedin.com/in/jonathan-sherrell-aa0b42241' title='LinkedIn profile'>
+      <svg class=feather><use href=#ft-linkedin /></svg>
+      </a>
+      <a href='https://instagram.com/jomsh.cc' title='Instagram profile'>
+        <svg class=feather><use href=#ft-instagram /></svg>
+      </a>
+      <a href='https://twitter.com/jomshcc' title='Twitter profile'>
+        <svg class=feather><use href=#ft-twitter /></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>Introduction</h2>
+
+  <p>I have a Computer Engineering degree from Kansas State
+  University. After college, I worked briefly as a software engineer at
+  Garmin, but never got my career on track. My last job, at Allen Press,
+  provided many informal opportunities to revisit software development,
+  and I'm now looking for a job in that field.
+
+  <p>At Allen Press, I relearned XSLT, HTML, JavaScript, and the tools
+  required to work productively in a Linux shell. Most recently, (in
+  my free time) I've done some web development and created a terminal
+  color palette adjuster in Go.
+</section>
+
+<section class=grid>
+  <h2>Experience</h2>
+
+  <h3>Allen Press</h3>
+
+  <p class=title>XML Specialist
+  <p class=loc>Lawrence, KS
+  <p class=date>19–22
+  <ul>
+    <li>Performed 70%–80% of the XML component of all daily production.
+    <li>Took leadership role maintaining a library of XSLT stylesheets.
+    <li>Primarily worked in dialects of JATS, the industry standard for tagging journal articles.
+    <li>Assisted transitioning online publishing to a new web platform.
+  </ul>
+  <p>Additionally, I built two exploratory web apps in my free time.
+  <ul>
+    <li>One illustrated the effect of an arbitrary XSLT transformation on a JATS document.
+    <li>The other used a (reverse-engineered) vendor-provided API to replace a cumbersome interface.
+  </ul>
+
+  <h3>Checkers Foods</h3>
+
+  <p class=title>Produce Clerk
+  <p class=loc>Lawrence, KS
+  <p class=date>14–19
+  <ul>
+    <li>Took leadership role on inventory, computer-related tasks.
+    <li>Recognized for keeping department exceptionally tidy.
+    <li>Provided routine service to customers and vendors.
+  </ul>
+
+  <h3>Garmin</h3>
+
+  <p class=title>Software Engineer
+  <p class=loc>Olathe, KS
+  <p class=date>09–10
+  <ul>
+    <li>Worked on a team developing a portable navigation device.
+    <li>Our main focus was porting the C-based software stack from a proprietary OS to Linux.
+  </ul>
+
+  <h3>Kansas State University</h3>
+
+  <p class=title>Graduate Research Assistant
+  <p class=loc>Manhattan, KS
+  <p class=date>07–09
+  <ul>
+    <li>Assisted various projects for the Department of Electrical and Computer Engineering.
+    <li>Presented posters at several national conferences.
+    <li>Worked on a regional network testbed with counterparts at several universities.
+  </ul>
+
+  <h3>Sandia National Laboratory</h3>
+
+  <p class=title>Engineering Intern
+  <p class=loc>Albuquerque, NM
+  <p class=date>07–08
+  <ul>
+    <li>Modeling and simulation of specialized high-bandwidth, long-distance networks.
+    <li>Primarily worked in OPNET®, including custom models developed in C.
+  </ul>
+</section>
+
+<section class=grid>
+  <h2>Education</h2>
+
+  <h3>Kansas State University</h3>
+
+  <p class=title>BS Computer Engineering
+  <p class=loc>Manhattan, KS
+  <p class=date>02–07
+</section>
+
+<section>
+  <h2>Professional References</h2>
+
+  <p>Contact information available on request.</p>
+  <ul>
+    <li>Kasey Embers, manager, Allen Press
+    <li>Wes Nellis, manager, Checkers
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <a href='https://github.com/jomshcc/resume'>GitHub project</a>. Thanks, <a href='https://feathericons.com'>Feather</a>.<br>
+  Shameless gradients, omission of rocketship emojis © John Sherrell.
+</footer>
+
+<svg style="position: absolute;" width=0 height=0>
+  <defs>
+    <linearGradient id=grad x1=1 y1=0 x2=0 y2=1>
+      <stop offset=0% stop-color=cyan />
+      <stop offset=100% stop-color=dodgerblue />
+    </linearGradient>
+
+    <!-- Straight from the Feather sprite -->
+    <symbol id=ft-map-pin viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></symbol>
+    <symbol id=ft-github viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></symbol>
+    <symbol id=ft-linkedin viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></symbol>
+    <symbol id=ft-instagram viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></symbol>
+    <symbol id=ft-twitter viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></symbol>
+  </defs>
+</svg>
 
 </html>
