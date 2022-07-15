@@ -3,16 +3,18 @@
 body {
   max-width: 650px;
   margin: auto;
+  position: relative;
 }
 body > a:first-child {
   display: block;
   position: absolute;
-  top: 0; right: 0;
+  /* :root padding on top */
+  top: -1rem; right: 0;
   opacity: .7;
   text-decoration: none;
   padding: .3em .8em .5em;
   outline: solid .5px;
-  border-bottom-left-radius: .3em;
+  border-radius: 0 0 .3em .3em;
   font-variant: all-small-caps;
 }
 body > a:first-child:hover { opacity: 1; outline-width: 1px; }
