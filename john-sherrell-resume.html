@@ -106,9 +106,9 @@ header address {
 header address svg.feather { vertical-align: -1px; font-size: small; }
 header > div a { text-decoration: none; }
 header > div a:hover { text-decoration: underline; }
-header > div a.email, header > div nav { display: inline-block; }
+header a.email, header nav, header nav > a { display: inline-block; }
 nav * { vertical-align: bottom; }
-nav svg.feather { font-size: 16pt; margin-right: 2px; }
+nav svg.feather { font-size: 16pt; margin-inline-start: 2px; }
 nav svg.feather:hover { stroke: url(#grad); }
 
 section { margin-block: 2rem; }
@@ -591,15 +591,14 @@ sHkN0DmnWaJDiBQrbdKbDac3mOQG/wA0rXAbk03q3mUMbX6iHEgg3/4QFZjFsb3R+I2F1tJpru6d
         <svg class=feather><use href=#ft-map-pin /></svg>
         Lawrence, Kansas
       </address>
-      <!-- • -->
-      <a class=email href='mailto:john@jomsh.cc'>john@jomsh.cc</a>
+      <a href='mailto:john@jomsh.cc' class=email>john@jomsh.cc</a>
       <a href='https://jomsh.cc' class=hidden>https://jomsh.cc</a>
       <nav>
         <a href='https://github.com/jomshcc' title='GitHub profile'>
           <svg class=feather><use href=#ft-github /></svg>
         </a>
         <a href='https://www.linkedin.com/in/jonathan-sherrell-aa0b42241' title='LinkedIn profile'>
-        <svg class=feather><use href=#ft-linkedin /></svg>
+          <svg class=feather><use href=#ft-linkedin /></svg>
         </a>
         <a href='https://instagram.com/jomsh.cc' title='Instagram profile'>
           <svg class=feather><use href=#ft-instagram /></svg>
@@ -716,10 +715,10 @@ sHkN0DmnWaJDiBQrbdKbDac3mOQG/wA0rXAbk03q3mUMbX6iHEgg3/4QFZjFsb3R+I2F1tJpru6d
 
 <footer>
   <a href='https://github.com/jomshcc/resume'>GitHub project</a>. Thanks, <a href='https://feathericons.com'>Feather</a>.<br>
-  Shameless gradients, omission of rocketship emojis © John Sherrell.
+  Shameless gradients © John Sherrell. Omission of rocketship emojis © John Sherrell.
 </footer>
 
-<svg style="position: absolute;" width=0 height=0>
+<svg style='position: absolute;' width=0 height=0>
   <defs>
     <linearGradient id=grad x1=1 y1=0 x2=0 y2=1>
       <stop offset=0% stop-color=cyan />

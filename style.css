@@ -54,9 +54,9 @@ header address {
 header address svg.feather { vertical-align: -1px; font-size: small; }
 header > div a { text-decoration: none; }
 header > div a:hover { text-decoration: underline; }
-header > div a.email, header > div nav { display: inline-block; }
+header a.email, header nav, header nav > a { display: inline-block; }
 nav * { vertical-align: bottom; }
-nav svg.feather { font-size: 16pt; margin-right: 2px; }
+nav svg.feather { font-size: 16pt; margin-inline-start: 2px; }
 nav svg.feather:hover { stroke: url(#grad); }
 
 section { margin-block: 2rem; }
