@@ -140,14 +140,14 @@ main ul {
     font-size: 85%;
   }
   .meh, h2::after, footer, body > a:first-child,
-    header > a:first-child { display: none }
+    header > a:first-child, section:first-of-type h2 { display: none }
 
-  header { font-size: medium; }
   h1, h2, h3, p.date { color: #444; }
   h2 { border-bottom: solid 1px; }
   section { margin-block: 1rem; }
 
   header, header > div { all: revert; }
+  header { margin-block-end: 1.5em; }
   header > div > div > nav {
     position: absolute;
     top: 5px; right: 0;
@@ -163,9 +163,7 @@ main ul {
     align-items: center;
     padding: 0 .2em .2em;
   }
-  header > div > div > a.email {
-    order: -1;
-  }
+  header > div > div > a.email { order: -1; }
   header > div > div > .hidden { display: block; }
 
   .grid > h3:not(:first-of-type) { margin-block-start: 1rem; }
