@@ -30,34 +30,34 @@ footer {
 
 header {
   font-size: large;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
   text-align: center;
 }
 header > * { display: inline-block; vertical-align: middle; }
-header > a:first-child {
-  margin-inline-end: .75ch;
-  min-height: 150px; /* Keep approx layout spacing when there's no photo */
-}
-header h1 { margin: 0; }
-header > div {
-  width: max-content;
+header > :first-child { min-height: 160px; }
+img#me { margin-inline-end: .75ch; }
+#head {
+  display: inline-grid;
   text-align: left;
-  margin-top: .5em;
+  white-space: nowrap;
+  grid: auto-flow dense / auto auto;
 }
-header address {
-  border-block: solid .5px #888;
-  padding-block: 1px;
-  margin-bottom: .4em;
+h1 {
+  margin: 0;
+  grid-column: span 2;
+  text-align: center;
+  font-size: 1.9em;
 }
-header address svg.feather { vertical-align: -1px; font-size: small; }
-header > div a { text-decoration: none; }
-header > div a:hover { text-decoration: underline; }
-header a.email, header nav, header nav > a { display: inline-block; }
-nav * { vertical-align: bottom; }
-nav svg.feather { font-size: 16pt; margin-inline-start: 2px; }
-nav svg.feather:hover { stroke: url(#grad); }
+#icons, #email { text-align: end; }
+#email, #url { border-block: solid .5px #888; }
+#head > :not(h1) { padding-block: .2em; padding-inline: .2em; }
+#head > :not(#icons) svg { font-size: .8em; }
+#email > svg, #url > svg { vertical-align: -2px;}
+#icons > a { display: inline-block; }
+#icons svg.feather { font-size: 1.2em; margin-inline-start: 2px; }
+#icons svg.feather:hover { stroke: url(#grad); }
+
+header a { text-decoration: none; }
+header a:hover { text-decoration: underline; }
 
 section { margin-block: 2rem; }
 h2 {
@@ -131,8 +131,6 @@ main ul {
   .grid > * { margin-inline-start: .5rem; }
 }
 
-@page :first { margin-top: 1.8rem; }
-
 @media print {
   :root {
     color: #222;
@@ -146,25 +144,23 @@ main ul {
   h2 { border-bottom: solid 1px; }
   section { margin-block: 1rem; }
 
-  header, header > div { all: revert; }
-  header { margin-block-end: 1.5em; }
-  header > div > div > nav {
-    position: absolute;
-    top: 5px; right: 0;
+  header { margin-block: -.5rem 1.5rem; }
+  #head {
+    font-size: medium;
+    display: grid;
+    grid: auto-flow / auto auto auto;
   }
-  nav svg.feather { font-size: large; margin-right: 2px; stroke-width: 1px; color: #444; }
-  header > div address { all: revert; }
-  header > div address > svg { display: none; }
-  header > div > div {
-    color: #888;
-    border-block: solid .5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 .2em .2em;
+  h1 { text-align: start; }
+  #url, #email, #icons, #location { all: revert; }
+  #icons { grid-area: 1/3; align-self: end; }
+  #head > :not(h1, #icons) {
+    border-block: solid .5px #888;
+    padding-block: 0 .1em;
   }
-  header > div > div > a.email { order: -1; }
-  header > div > div > .hidden { display: block; }
+  #head > #icons { margin-block-end: -.25em; }
+  #email { text-align: center; }
+  #icons, #location { text-align: end; }
+  #head svg.feather { color: #555; stroke-width: 1px; }
 
   .grid > h3:not(:first-of-type) { margin-block-start: 1rem; }
   .grid > ul, .grid > p:not([class]) { margin-block-start: .5rem; }
