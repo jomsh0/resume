@@ -47,7 +47,7 @@ h1 {
   text-align: center;
   font-size: 1.9em;
 }
-#icons, #email { text-align: end; }
+#icons, #url { text-align: end; }
 #email, #url { border-block: solid .5px #888; }
 #head > :not(h1) { padding-block: .2em; padding-inline: .2em; }
 #head > :not(#icons) svg { font-size: .8em; }
@@ -148,19 +148,21 @@ main ul {
   #head {
     font-size: medium;
     display: grid;
-    grid: auto-flow / auto auto auto;
+    grid: auto-flow dense / auto auto auto;
   }
   h1 { text-align: start; }
   #url, #email, #icons, #location { all: revert; }
-  #icons { grid-area: 1/3; align-self: end; }
+  #icons { grid-area: 1/3; align-self: end; margin-block-end: -.25em; }
   #head > :not(h1, #icons) {
     border-block: solid .5px #888;
     padding-block: 0 .1em;
   }
-  #head > #icons { margin-block-end: -.25em; }
-  #email { text-align: center; }
-  #icons, #location { text-align: end; }
-  #head svg.feather { color: #555; stroke-width: 1px; }
+  #head > :not(#icons) > svg { display: none; }
+  #url { grid-column: 3; }
+  #url > a::before { content: 'https://'; }
+  #icons, #url { text-align: end; }
+  #location { text-align: center; }
+  #icons svg.feather { color: #555; stroke-width: 1px; }
 
   .grid > h3:not(:first-of-type) { margin-block-start: 1rem; }
   .grid > ul, .grid > p:not([class]) { margin-block-start: .5rem; }
