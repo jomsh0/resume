@@ -9,8 +9,7 @@
   <meta name=viewport content='width=device-width'>
 
   <title>Résumé—John Sherrell</title>
-  
-<% if [ -z "${RESUME_STANDALONE-}" ]; then %>
+<% if [ -z "${RESUME_STANDALONE-}" ]; then -%>
   <link rel=icon sizes=any href='/favicon.svg' type='image/svg+xml'>
   <!-- idk, apple!
   <link rel=mask-icon href=/favicon.svg color=#ccc>
@@ -18,14 +17,16 @@
   <link rel=stylesheet href=style.css>
   <script data-goatcounter='https://jomsh.goatcounter.com/count' src='https://gc.zgo.at/count.js' async></script>
   <script src='/s3-log.js' async></script>
-
-<% else %>
-
+  <noscript>
+    <link rel=preload as=image referrerpolicy=unsafe-url
+      href='https://jomshcc.s3.us-east-2.amazonaws.com/c.gif?ns'>
+  </noscript>
+<% else -%>
   <style>
-<% sed /@import/d ../_/base.css style.css %>
+<% sed /@import/d ../_/base.css style.css -%>
   </style>
   <script id=photo-data type='image/jpeg;base64'>
-<% base64 ../_/img/john-400.jpg %>
+<% base64 ../_/img/john-400.jpg -%>
   </script>
   <script>
     function imgFB(img) {
@@ -35,14 +36,14 @@
       img.src = `data:${photoData.type},${photoData.text.trim()}`
     }
   </script>
-<% fi %>
+<% fi -%>
 </head>
 
-<% if [ -z "${RESUME_STANDALONE-}" ]; then %>
+<% if [ -z "${RESUME_STANDALONE-}" ]; then -%>
 <a href=jonathan-sherrell-resume.html download title='Download standalone offline HTML file'>Download</a>
-<% else %>
+<% else -%>
 <a href='https://jomsh.cc/resume/'>View online</a>
-<% fi %>
+<% fi -%>
 
 <header>
   <a href='https://jomsh.cc' title='Back to jomsh.cc'>
